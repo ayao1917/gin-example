@@ -1,0 +1,11 @@
+version: '3'
+services:
+  go-docker:
+    container_name: "go-docker"
+    build: "./docker/golang"
+    volumes:
+      - ".:${GO_PROJECT_DIR}"
+    ports:
+      - "6000:8080"
+    environment:
+      GO_WORK_DIR: "${GO_PROJECT_DIR}/app"
